@@ -59,7 +59,7 @@ public class Customer {
 }
 ````
 
-## UsO DE GET y POST en HTML
+## Uso DE GET y POST en HTML
 En HTML, los formularios solo admiten los métodos GET y POST. Aunque algunas operaciones, como la eliminación de un recurso, normalmente se harían con una solicitud DELETE en una API REST, no podemos usar el método DELETE en un formulario HTML.  Por lo tanto, en su lugar, utilizamos el método POST para enviar la solicitud al servidor. Luego, en el servidor, tratamos esta solicitud POST como una solicitud DELETE. Este es un enfoque común para superar las limitaciones de los formularios HTML.  Por ejemplo, para eliminar un cliente, utilizamos el siguiente código:
 
 ````
