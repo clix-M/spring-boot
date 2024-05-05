@@ -10,7 +10,5 @@ import java.util.UUID;
 @Repository
 public interface RCustomer extends JpaRepository<Customer, UUID> {
     
-    List<Customer> findByMaterialStatus(String married);
 
-    List<Customer> findByPostalCode(String number);
 }

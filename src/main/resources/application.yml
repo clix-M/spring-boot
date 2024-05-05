@@ -2,9 +2,9 @@ spring:
   application:
     name: sem6
   datasource:
-    url: jdbc:mysql://localhost:3306/sem6
-    username: root
-    password: root
+    url: jdbc:postgresql://ep-yellow-glade-a4s3jp0u-pooler.us-east-1.aws.neon.tech:5432/verceldb
+    username: default
+    password: 0kHmgn5VqeoT
   jpa:
     hibernate:
       ddl-auto: update

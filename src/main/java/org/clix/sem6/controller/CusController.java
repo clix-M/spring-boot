@@ -24,24 +24,13 @@ public class CusController {
     public String getAllCustomers(Model model) {
         List<Customer> customers = sCustomer.getAllCustomers();
         model.addAttribute("customers", customers);
+        model.addAttribute("totalSalary", sCustomer.totalSalary());
+        model.addAttribute("totalEmployees", sCustomer.totalEmployees());
+
+        model.addAttribute("customer", new Customer());
         return "index"; //
     }
 
-    // get by Material Status "Married"
-    @GetMapping("/married")
-    public String getByMaterialStatusMarried(Model model) {
-        List<Customer> customers = sCustomer.getByMaterialStatusMarried();
-        model.addAttribute("customers", customers);
-        return "married";
-    }
-
-    // get by Postal Code "05000"
-    @GetMapping("/postalcode")
-    public String getByPostalCode05000(Model model) {
-        List<Customer> customers = sCustomer.getByPostalCode05000();
-        model.addAttribute("customers", customers);
-        return "postalcode";
-    }
 
     // post a customer
     @PostMapping("/postcustomer")
@@ -52,11 +41,12 @@ public class CusController {
     }
 
     // show form to create or edit a customer
-    @GetMapping({"/create", "/edit/{id}"})
+    @GetMapping({"/edit/{id}"})
     public String showForm(@PathVariable(required = false) UUID id, Model model) {
         Customer customer = (id != null) ? sCustomer.getCustomerById(id) : new Customer();
         model.addAttribute("customer", customer);
-        return "post";
+        model.addAttribute("edit", true); // Add this line
+        return "index";
     }
 
 

@@ -27,19 +27,18 @@ public class SCustomer {
         rCustomer.deleteById(id);
     }
 
-
-    // get by Material Status "Married"
-    public List<Customer> getByMaterialStatusMarried() {
-        return rCustomer.findByMaterialStatus("Married");
-    }
-
-    // get by Postal Code "05000"
-    public List<Customer> getByPostalCode05000() {
-        return rCustomer.findByPostalCode("05000");
-    }
-
     // get a customer by id
     public Customer getCustomerById(UUID id) {
         return rCustomer.findById(id).orElse(null);
+    }
+
+    // total salary of all customers
+    public double totalSalary() {
+        return rCustomer.findAll().stream().mapToDouble(Customer::getSalary).sum();
+    }
+
+    // gtotal employees
+    public long totalEmployees() {
+        return rCustomer.count();
     }
 }

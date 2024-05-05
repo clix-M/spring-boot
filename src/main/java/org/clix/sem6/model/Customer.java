@@ -16,13 +16,10 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String postalCode;
-    private String firstName;
-    private String secondName;
-    private String firstSurname;
-    private String secondSurname;
-    private String city;
-    private String materialStatus;
-    private String salary;
+    private String name;
+    private String lastName;
+    private String email;
+    private String phone;
+    private Double salary;
 
 }
