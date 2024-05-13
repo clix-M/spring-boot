@@ -2,7 +2,7 @@ spring:
   application:
     name: sem6
   datasource:
-    url: jdbc:mysql://localhost:3306/sem6
+    url: jdbc:mysql://localhost:3306/s8
     username: root
     password: root
   jpa:
